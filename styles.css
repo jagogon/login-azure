@@ -1,5 +1,5 @@
 body {
-    background-image: url('./login_axess.jpg');
+    background-image: url('https://raw.githubusercontent.com/jagogon/login-azure/main/login_axess.jpg');
     background-size: cover; /* Hace que la imagen cubra todo el fondo */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-position: center center; /* Centra la imagen en el fondo */
