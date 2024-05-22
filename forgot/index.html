@@ -454,13 +454,36 @@ h1 {
 button[aria-disabled="true"] {
   cursor: not-allowed;
   opacity: 0.2;
-}#back {
+}.attrEntry>a.helpLink.tiny {
   display: none;
 }
 
-.header {
+#emailVerificationControl .verificationInfoText>div::after,
+#emailVerificationControl .verificationSuccessText>div::after,
+#emailVerificationControl .verificationErrorText>div::after {
+  content: '';
+  margin-bottom: 24px;
   display: block;
 }
+
+#cancel,
+#emailVerificationControl_but_change_claims {
+  display: none !important;
+}
+
+#attributeList>ul>li:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+/* #ForgotPasswordExchange {
+  border: none;
+  color: #00B0B3;
+  display: inline;
+  font-size: 14px;
+  width: auto;
+  height: auto;
+  float: right;
+} */
     </style> <script defer>
     const getUrlParams = () =>
   Object.fromEntries(new URLSearchParams(location.search));
@@ -538,72 +561,88 @@ const commonInit = () => {
 
 setTimeout(commonInit, 100);
 
-function init() {
+const isCodeInputAvailable = (callback) => {
+  if (!document.getElementById("email_ver_input")) return;
+
+  const interval = setInterval(() => {
+    const isAvailable =
+      document.getElementById("email_ver_input").parentNode.parentNode.style
+        .display !== "none";
+    if (isAvailable) {
+      clearInterval(interval);
+      callback();
+    }
+  }, 100);
+};
+
+const forgotInit = () => {
+  const getUrlParams = () =>
+    Object.fromEntries(new URLSearchParams(location.search));
   const { login_hint, email } = getUrlParams();
 
-  // create a label called "Email" and input with id "email" and append to UserId field
-  const emailLabel = document.createElement("label");
-  emailLabel.setAttribute("for", "email");
-  emailLabel.textContent = "Email";
-  const emailInput = document.createElement("input");
-  emailInput.setAttribute("type", "email");
-  emailInput.setAttribute("id", "email");
-  emailInput.setAttribute("value", email);
-  emailInput.setAttribute("disabled", "disabled");
-
-  const userId = document.getElementById("UserId");
-  if (userId) {
-    userId.parentNode.appendChild(emailLabel);
-    userId.parentNode.appendChild(emailInput);
-
-    document.querySelector('label[for="UserId"]').style.display = "none";
-    userId.style.display = "none";
-    userId.value = login_hint;
-  }
+  document.querySelector(".form").style.visibility = "visible";
 
   const signInName = document.getElementById("signInName");
   if (signInName) {
-    signInName.parentNode.appendChild(emailLabel);
-    signInName.parentNode.appendChild(emailInput);
-
-    document.querySelector('label[for="signInName"]').style.display = "none";
-    signInName.style.display = "none";
-    signInName.value = login_hint;
+    signInName?.setAttribute("value", login_hint);
+    signInName?.setAttribute("disabled", "disabled");
+  }
+  if (document.getElementById("signInName_label")) {
+    document.getElementById("signInName_label").style.display = "none";
   }
 
-  document.getElementById("password").focus();
+  const emailField = document.getElementById("email");
+  if (emailField) {
+    emailField?.setAttribute("value", email);
+    emailField?.setAttribute("disabled", "disabled");
+  }
 
-  const forgotPassword = document.getElementById("forgotPassword");
-  forgotPassword.setAttribute(
-    "href",
-    forgotPassword.getAttribute("href") +
-      `&login_hint=${login_hint}&email=${email}`
-  );
+  if (document.getElementById("UserId")) {
+    document.getElementById("UserId").style.display = "none";
+  }
 
-  const checkForError = (cb) => {
-    if (document.querySelector(".error.pageLevel").style.display === "block") {
-      cb();
-    }
-  };
+  if (document.getElementById("continue"))
+    document.getElementById("continue").innerText = "Sending...";
+  if (document.getElementById("email_ver_but_send"))
+    document.getElementById("email_ver_but_send").click();
+  if (document.getElementById("email_ver_input"))
+    document.getElementById("email_ver_input").setAttribute("autofocus", true);
 
-  document
-    .getElementById("localAccountForm")
-    .addEventListener("submit", () => {
-      const button = document.getElementById("next");
-      button.innerText = "Signing in...";
-      button.setAttribute("disabled", true);
+  isCodeInputAvailable(() => {
+    setTimeout(() => {
+      document.getElementById("email")?.setAttribute("disabled", "disabled");
+      document.getElementById("continue").innerText = "Continue";
+    }, 100);
+  });
 
-      const interval = setInterval(() => {
-        checkForError(() => {
-          button.innerText = "Sign in";
-          button.removeAttribute("disabled");
-          clearInterval(interval);
+  if (document.getElementById("email_ver_but_resend"))
+    document
+      .getElementById("email_ver_but_resend")
+      .addEventListener("click", () => {
+        document.getElementById("continue").innerText = "Sending...";
+
+        isCodeInputAvailable(() => {
+          setTimeout(() => {
+            document
+              .getElementById("email")
+              ?.setAttribute("disabled", "disabled");
+            document.getElementById("continue").innerText = "Continue";
+          }, 100);
         });
-      }, 100);
-    });
-}
+      });
 
-setTimeout(init, 100);
+  if (document.getElementById('email')) {
+    document.getElementById("email")?.setAttribute("disabled", "disabled");
+  }
+
+  // console.log("hello");
+  // document
+  //   .getElementById("forgotPassword")
+  //   .parentNode.appendChild(document.getElementById("ForgotPasswordExchange"));
+};
+
+console.log("boo");
+setTimeout(forgotInit, 100);
 
 
 
