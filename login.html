@@ -9,94 +9,88 @@
     body {
       margin: 0;
       padding: 0;
+
+
+      /* margin: 0; // 1
+      font-family: var(--#{$prefix}body-font-family);
+      @include font-size(var(--#{$prefix}body-font-size));
+      font-weight: var(--#{$prefix}body-font-weight);
+      line-height: var(--#{$prefix}body-line-height);
+      color: var(--#{$prefix}body-color);
+      text-align: var(--#{$prefix}body-text-align);
+      background-color: var(--#{$prefix}body-bg); // 2
+      -webkit-text-size-adjust: 100%; // 3
+      -webkit-tap-highlight-color: rgba($black, 0); // 4 */
+
     }
 
     .fondo {
       width: 100vw;
       height: 100vh;
-      opacity: 1;
       display: flex;
       justify-content: flex-start;
+      align-items: center;
       color: white;
       background-image: url("https://raw.githubusercontent.com/jagogon/login-azure/main/login_axess.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+    }
 
-      .contenido {
-        position: relative;
-        margin-left: 15%;
-        align-self: center;
-      };
+    .contenido {
+      position: relative;
+      margin-left: 15%;
+    }
 
+    .logo,
+    .logo2 {
+      position: absolute;
+      object-fit: contain;
+      display: inline-block;
+    }
 
+    .logo {
+      top: -115px;
+    }
 
-      .logo {
-        object-fit: contain;
-        color: white;
-        display: inline-block;
-        top: -115px;
-        position: absolute;
+    .logo2 {
+      left: calc(50vw - 275px); /* Ajustado para centrar la imagen en relación con el ancho */
+      top: -111px;
+    }
 
-        img {
-          width: 333px;
-        }
-      }
+    .imagen-logo {
+      width: 333px;
+    }
 
-      .logo2 {
-        object-fit: contain;
-        color: white;
-        display: inline-block;
-        left: calc(50vw - 150px);
-        top: -111px;
-        position: absolute;
+    .imagen-logo2 {
+      width: 550px;
+    }
 
-        img {
-          width: 550px;
-        }
-      }
-
-      .caja {
-        width: 424px;
-        height: 496px;
-        border-radius: 4px;
-        background-color: #ffffff;
-        color: black;
-        padding: 25px;
-      }
-
+    .caja {
+      width: 424px;
+      height: 496px;
+      border-radius: 4px;
+      background-color: #ffffff;
+      color: black;
+      padding: 25px;
     }
   </style>
-
 </head>
 
 <body>
-
   <div class="fondo">
     <div class="contenido">
-      <span class="logo">
-        <img  src="https://raw.githubusercontent.com/jagogon/login-azure/main/LogoBlancoFranjaAzul.png"
-          alt="logo axess">
-      </span>
-      <span>
-        <img class="imagen-logo2" src="https://raw.githubusercontent.com/jagogon/login-azure/main/MONITOREO.svg" alt="monitorio">
-                                       
-      </span>
-
-
-      <div class="caja">
-
-        <div id="api"></div>
-
-
+      <div class="logo">
+        <img class="imagen-logo" src="https://raw.githubusercontent.com/jagogon/login-azure/main/LogoBlancoFranjaAzul.png" alt="logo axess">
       </div>
-
+      <div class="logo2">
+        <img class="imagen-logo2" src="https://raw.githubusercontent.com/jagogon/login-azure/main/MONITOREO.svg" alt="monitoreo">
+      </div>
+      <div class="caja">
+        <div id="api"></div>
+      </div>
     </div>
   </div>
-
-
-
-
 </body>
 
 </html>
