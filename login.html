@@ -6,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hispasat</title>
   <style>
-
     body {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
 
     .fondo {
@@ -20,7 +19,7 @@
       justify-content: flex-start;
       color: white;
       background-image: url("https://raw.githubusercontent.com/jagogon/login-azure/main/login_axess.jpg");
-      background-repeat: no-repeat;    
+      background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
 
@@ -29,25 +28,35 @@
         margin-left: 15%;
         align-self: center;
       };
-    
+
+
+
       .logo {
         object-fit: contain;
         color: white;
         display: inline-block;
         top: -115px;
         position: absolute;
+
+        img {
+          width: 333px;
+        }
       }
 
-      .logo2{
+      .logo2 {
         object-fit: contain;
         color: white;
         display: inline-block;
         left: calc(50vw - 150px);
         top: -111px;
         position: absolute;
+
+        img {
+          width: 550px;
+        }
       }
 
-      .caja{
+      .caja {
         width: 424px;
         height: 496px;
         border-radius: 4px;
@@ -57,32 +66,30 @@
       }
 
     }
-
   </style>
 
 </head>
 
 <body>
-<!-- 
-  <img src="https://raw.githubusercontent.com/jagogon/login-azure/main/login_axess.jpg" alt="home-bg" /> -->
 
   <div class="fondo">
     <div class="contenido">
       <span class="logo">
-        <img src="../../../assets/logos/LogoBlancoFranjaAzul.png" alt="logo axess" class="imagen-logo">
+        <img  src="https://github.com/jagogon/login-azure/blob/main/LogoBlancoFranjaAzul.png"
+          alt="logo axess">
       </span>
-      <span class="logo2">
-        <img src="../../../assets/logos/MONITOREO.svg" alt="monitorio" class="imagen-logo2">
+      <span>
+        <img class="imagen-logo2" src="https://github.com/jagogon/login-azure/blob/main/MONITOREO.svg" alt="monitorio">
       </span>
 
-      <form novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-invalid">
-        <div class="caja">
 
-          <div id="api"></div>
+      <div class="caja">
+
+        <div id="api"></div>
 
 
-        </div>
-      </form>
+      </div>
+
     </div>
   </div>
 
