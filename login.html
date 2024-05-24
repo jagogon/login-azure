@@ -11,6 +11,22 @@
       padding: 0;
     }
 
+    label{
+      display: inline-block;
+    }
+
+    input[type=text], .axess input[type=password] {
+      width: 100%;
+      padding: 12px 35px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 0px solid #ccc;
+      box-sizing: border-box;
+      background-color: rgba(239, 240, 241, 0.6196078431);
+      outline: none;
+    }
+
+  
     .fondo {
       width: 100vw;
       height: 100vh;
@@ -88,6 +104,11 @@
     }
 
 
+  .heading, .intro , .divider, .create .error {
+    display: none;
+  }
+
+
   </style>
 
 
@@ -96,14 +117,9 @@
 
   const init = () => {
 
-    var headings = document.querySelectorAll('.heading');
-    headings.forEach((heading) => heading.remove());
+    // var headings = document.querySelectorAll('.heading');
+    // headings.forEach((heading) => heading.remove());
 
-    var intro = document.querySelectorAll('.intro');
-    intro.forEach((intro) => intro.remove());
-
-
-    
 
 
   };
