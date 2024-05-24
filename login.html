@@ -162,38 +162,53 @@
   
   </style>
 
-<!-- 
+
 <script defer>
 
 
   const init = () => {
-    var emailLabel = document.querySelector('label[for="email"]');
-    if (emailLabel) {
-      emailLabel.textContent = 'Usuario';
-    }  
+    console.log("setTimeout")
 
-    var emailInput = document.querySelector('input[type="email"]');
-    if (emailInput)  {
-      emailInput.placeholder = 'samplemail@gmail.com';
-    }
 
-    var passwordLabel = document.querySelector('label[for="password"]');
-    if (passwordLabel) {
-      passwordLabel.textContent = 'Contraseña';
-    } 
+    const emailLabel = document.querySelector('label[for="email"]');
+    const emailInput = document.querySelector('input[type="email"]');
+    const passwordLabel = document.querySelector('label[for="password"]');
+    const passwordInput = document.querySelector('input[type="password"]');
+     const errorDiv = document.querySelector('.error.itemLevel'); 
 
-    var passwordInput = document.querySelector('input[type="password"]');
-    if (passwordInput) {
-      passwordInput.placeholder = '********';      
-    } 
+    if (emailLabel) emailLabel.textContent = 'Usuario';
+    if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
+    if (passwordLabel) passwordLabel.textContent = 'Contraseña';
+    if (passwordInput) passwordInput.placeholder = '********';
+    if (errorDiv) errorDiv.remove();  
+
+    // var emailLabel = document.querySelector('label[for="email"]');
+    // if (emailLabel) {
+    //   emailLabel.textContent = 'Usuario';
+    // }  
+
+    // var emailInput = document.querySelector('input[type="email"]');
+    // if (emailInput)  {
+    //   emailInput.placeholder = 'samplemail@gmail.com';
+    // }
+
+    // var passwordLabel = document.querySelector('label[for="password"]');
+    // if (passwordLabel) {
+    //   passwordLabel.textContent = 'Contraseña';
+    // } 
+
+    // var passwordInput = document.querySelector('input[type="password"]');
+    // if (passwordInput) {
+    //   passwordInput.placeholder = '********';      
+    // } 
   };
-console.log("setTimeout")
+
   setTimeout(init, 100);
 
-</script>  -->
+</script> 
 
 
-<script defer>
+<!-- <script defer>
   document.addEventListener('DOMContentLoaded', () => {
     console.log("DOMContentLoaded")
     const emailLabel = document.querySelector('label[for="email"]');
@@ -210,7 +225,7 @@ console.log("setTimeout")
     
 
   });
-</script> 
+</script>  -->
 
 
 </head>
