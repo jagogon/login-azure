@@ -164,22 +164,17 @@
 
 
   const init = () => {
-
     var emailLabel = document.querySelector('label[for="email"]');
-      if (emailLabel) {
-        emailLabel.textContent = 'Usuario';
-      }
+    if (emailLabel)  emailLabel.textContent = 'Usuario';
 
+    var emailInput = document.querySelector('#email');
+    if (emailInput)  emailInput.placeholder = 'samplemail@gmail.com';
 
     var passwordLabel = document.querySelector('label[for="password"]');
-      if (passwordLabel) {
-        passwordLabel.textContent = 'Contraseña';
-      }
+    if (passwordLabel)  passwordLabel.textContent = 'Contraseña';
 
-
-      
-
-
+    var passwordInput = document.querySelector('#password');
+    if (passwordInput)  passwordInput.placeholder = '********';      
   };
 
   setTimeout(init, 100);
