@@ -114,7 +114,7 @@
     }
 
     .caja {
-      width: 424px;
+      width: 380px;
       height: 496px;
       border-radius: 4px;
       background-color: #ffffff;
@@ -136,8 +136,7 @@
 
     .credenciales {
       width: 342px;
-      height: 46px;
-      margin:16px 0px;
+      height: 46px;      
       font-family: OpenSans;
       font-size: 14px;
       font-weight: normal;
@@ -146,6 +145,10 @@
       line-height: 1.57;
       letter-spacing: normal;
       color: #9da8ba;
+    }
+
+    .buttons{
+      margin: 16px 0px;
     }
 
 
@@ -165,14 +168,14 @@
 <script defer>
 
   const init = () => {
-    console.log("setTimeout 444444")
+    console.log("setTimeout 66666")
 
     const emailLabel = document.querySelector('label[for="email"]');
     const emailInput = document.querySelector('input[type="email"]');
     const passwordLabel = document.querySelector('label[for="password"]');
     const passwordInput = document.querySelector('input[type="password"]');
-     const errorDiv = document.querySelector('.error.itemLevel'); 
-     const signInButton = document.getElementById('next');
+    const errorDiv = document.querySelector('.error.itemLevel'); 
+    const signInButton = document.getElementById('next');
 
     if (emailLabel) emailLabel.textContent = 'Usuario';
     if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
@@ -188,25 +191,6 @@
 
 </script> 
 
-
-<!-- <script defer>
-  document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOMContentLoaded 1111")
-    const emailLabel = document.querySelector('label[for="email"]');
-    const emailInput = document.querySelector('input[type="email"]');
-    const passwordLabel = document.querySelector('label[for="password"]');
-    const passwordInput = document.querySelector('input[type="password"]');
-     const errorDiv = document.querySelector('.error.itemLevel'); 
-
-    if (emailLabel) emailLabel.textContent = 'Usuario';
-    if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
-    if (passwordLabel) passwordLabel.textContent = 'Contraseña';
-    if (passwordInput) passwordInput.placeholder = '********';
-    if (errorDiv) errorDiv.remove();      
-  });
-</script>  -->
-
-
 </head>
 
 <body>
@@ -219,6 +203,7 @@
         <img class="imagen-logo2" src="https://raw.githubusercontent.com/jagogon/login-azure/main/MONITOREO.svg" alt="monitoreo">
       </div>
       <div class="caja">
+
 
         <div class="container">
 
