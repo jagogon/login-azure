@@ -26,6 +26,21 @@
       outline: none;
     }
 
+    button[type="submit"] {
+      background-color: #00305f;
+      color: white;
+      padding: 14px 20px;
+      margin: 16px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      width: 342px;
+      height: 56px;
+      border-radius: 4px;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    }
+
+
   
     .fondo {
       width: 100vw;
@@ -108,11 +123,11 @@
     }
 
 
-  .heading, .intro , .divider, .create .error {
+  .heading, .intro , .divider, .create , .error, #forgotPassword {
     display: none;
   }
 
-
+  
   </style>
 
 
@@ -129,6 +144,15 @@
       if (emailLabel) {
         emailLabel.textContent = 'Usuario';
       }
+
+
+    var passwordLabel = document.querySelector('label[for="Password"]');
+      if (passwordLabel) {
+        passwordLabel.textContent = 'Contraseña';
+      }
+
+
+      
 
 
   };
