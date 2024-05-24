@@ -163,6 +163,48 @@
   </style>
 
 
+<script defer>
+
+  const init = () => {
+    const emailLabel = document.querySelector('label[for="email"]');
+    const emailInput = document.querySelector('input[type="email"]');
+    const passwordLabel = document.querySelector('label[for="password"]');
+    const passwordInput = document.querySelector('input[type="password"]');
+    const errorDiv = document.getElementById('.error.itemLevel');
+
+    if (emailLabel) emailLabel.textContent = 'Usuario';
+    if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
+    if (passwordLabel) passwordLabel.textContent = 'Contraseña';
+    if (passwordInput) passwordInput.placeholder = '********';
+    if (errorDiv) errorDiv.remove();  
+  };
+
+  setTimeout(init, 100);
+
+</script> 
+
+
+<!-- <script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+    const emailLabel = document.querySelector('label[for="email"]');
+    const emailInput = document.querySelector('input[type="email"]');
+    const passwordLabel = document.querySelector('label[for="password"]');
+    const passwordInput = document.querySelector('input[type="password"]');
+    const errorDiv = document.getElementById('.error.itemLevel');
+
+
+
+    if (emailLabel) emailLabel.textContent = 'Usuario';
+    if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
+    if (passwordLabel) passwordLabel.textContent = 'Contraseña';
+    if (passwordInput) passwordInput.placeholder = '********';
+    if (errorDiv) errorDiv.remove();  
+    
+
+  });
+</script> -->
+
+
 </head>
 
 <body>
@@ -191,24 +233,5 @@
     </div>
   </div>
 </body>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const emailLabel = document.querySelector('label[for="email"]');
-    const emailInput = document.querySelector('input[type="email"]');
-    const passwordLabel = document.querySelector('label[for="password"]');
-    const passwordInput = document.querySelector('input[type="password"]');
-    const errorDiv = document.getElementById('.error.itemLevel');
-
-    if (emailLabel) emailLabel.textContent = 'Usuario';
-    if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
-    if (passwordLabel) passwordLabel.textContent = 'Contraseña';
-    if (passwordInput) passwordInput.placeholder = '********';
-    if (errorDiv) errorDiv.remove();  
-    
-  });
-</script>
-
 
 </html>
