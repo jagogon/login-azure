@@ -13,6 +13,15 @@
 
     label{
       display: inline-block;
+      width: 93px;
+      height: 11px;
+      font-size: 15px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #4e5b73;      
     }
 
     input {
@@ -128,6 +137,10 @@
   }
 
   
+
+
+
+  
   </style>
 
 
@@ -135,10 +148,6 @@
 
 
   const init = () => {
-
-    // var headings = document.querySelectorAll('.heading');
-    // headings.forEach((heading) => heading.remove());
-
 
     var emailLabel = document.querySelector('label[for="email"]');
       if (emailLabel) {
@@ -179,6 +188,8 @@
           <label class="inicio-sesion">Bienvenidos al portal de clientes</label>
           <label class="credenciales">Inicie sesión para acceder a toda la información de sus servicios</label>
           <div id="api"></div>
+
+          <span style="color: #00305f"><a href="https://im.hispasat.es/adim/#/SignIn" target="_blank" rel="noopener noreferrer" class="span-a">¿ Olvidó su contraseña ?</a></span>
 
         </div>
 
