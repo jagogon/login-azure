@@ -161,24 +161,17 @@
 
 
 <script defer>
+  document.addEventListener('DOMContentLoaded', () => {
+    const emailLabel = document.querySelector('label[for="email"]');
+    const emailInput = document.querySelector('input[type="email"]');
+    const passwordLabel = document.querySelector('label[for="password"]');
+    const passwordInput = document.querySelector('input[type="password"]');
 
-
-  const init = () => {
-    var emailLabel = document.querySelector('label[for="email"]');
-    if (emailLabel)  emailLabel.textContent = 'Usuario';
-
-    var emailInput = document.querySelector('input[type="email"]');
-    if (emailInput)  emailInput.placeholder = 'samplemail@gmail.com';
-
-    var passwordLabel = document.querySelector('label[for="password"]');
-    if (passwordLabel)  passwordLabel.textContent = 'Contraseña';
-
-    var passwordInput = document.querySelector('input[type="password"]');
-    if (passwordInput)  passwordInput.placeholder = '********';      
-  };
-
-  setTimeout(init, 100);
-
+    if (emailLabel) emailLabel.textContent = 'Usuario';
+    if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
+    if (passwordLabel) passwordLabel.textContent = 'Contraseña';
+    if (passwordInput) passwordInput.placeholder = '********';
+  });
 </script>
 
 </head>
