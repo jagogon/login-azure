@@ -167,40 +167,40 @@
 
 
   const init = () => {
-    console.log("setTimeout")
+    console.log("setTimeout 11111111")
 
 
-    const emailLabel = document.querySelector('label[for="email"]');
-    const emailInput = document.querySelector('input[type="email"]');
-    const passwordLabel = document.querySelector('label[for="password"]');
-    const passwordInput = document.querySelector('input[type="password"]');
-     const errorDiv = document.querySelector('.error.itemLevel'); 
+    // const emailLabel = document.querySelector('label[for="email"]');
+    // const emailInput = document.querySelector('input[type="email"]');
+    // const passwordLabel = document.querySelector('label[for="password"]');
+    // const passwordInput = document.querySelector('input[type="password"]');
+    //  const errorDiv = document.querySelector('.error.itemLevel'); 
 
-    if (emailLabel) emailLabel.textContent = 'Usuario';
-    if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
-    if (passwordLabel) passwordLabel.textContent = 'Contraseña';
-    if (passwordInput) passwordInput.placeholder = '********';
-    if (errorDiv) errorDiv.remove();  
+    // if (emailLabel) emailLabel.textContent = 'Usuario';
+    // if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
+    // if (passwordLabel) passwordLabel.textContent = 'Contraseña';
+    // if (passwordInput) passwordInput.placeholder = '********';
+    // if (errorDiv) errorDiv.remove();  
 
-    // var emailLabel = document.querySelector('label[for="email"]');
-    // if (emailLabel) {
-    //   emailLabel.textContent = 'Usuario';
-    // }  
+    var emailLabel = document.querySelector('label[for="email"]');
+    if (emailLabel) {
+      emailLabel.textContent = 'Usuario';
+    }  
 
-    // var emailInput = document.querySelector('input[type="email"]');
-    // if (emailInput)  {
-    //   emailInput.placeholder = 'samplemail@gmail.com';
-    // }
+    var emailInput = document.querySelector('input[type="email"]');
+    if (emailInput)  {
+      emailInput.placeholder = 'samplemail@gmail.com';
+    }
 
-    // var passwordLabel = document.querySelector('label[for="password"]');
-    // if (passwordLabel) {
-    //   passwordLabel.textContent = 'Contraseña';
-    // } 
+    var passwordLabel = document.querySelector('label[for="password"]');
+    if (passwordLabel) {
+      passwordLabel.textContent = 'Contraseña';
+    } 
 
-    // var passwordInput = document.querySelector('input[type="password"]');
-    // if (passwordInput) {
-    //   passwordInput.placeholder = '********';      
-    // } 
+    var passwordInput = document.querySelector('input[type="password"]');
+    if (passwordInput) {
+      passwordInput.placeholder = '********';      
+    } 
   };
 
   setTimeout(init, 100);
