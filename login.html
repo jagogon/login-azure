@@ -44,7 +44,7 @@
       background-color: #00305f;
       color: white;
       padding: 14px 20px;
-      margin: 16px 0;
+      margin-top: 16px;
       border: none;
       cursor: pointer;
       width: 100%;
@@ -57,6 +57,7 @@
     label{
       width: 94px;
       height: 12px;
+      margin-top: 16px;
       font-size: 16px;
       font-weight: normal;
       font-style: normal;
@@ -67,7 +68,6 @@
     }
 
 
-  
     .fondo {
       width: 100vw;
       height: 100vh;
@@ -162,12 +162,12 @@
   
   </style>
 
-
+<!-- 
 <script defer>
 
 
   const init = () => {
-    console.log("setTimeout 22222222222")
+    console.log("setTimeout 3333")
 
 
     const emailLabel = document.querySelector('label[for="email"]');
@@ -182,35 +182,17 @@
     if (passwordInput) passwordInput.placeholder = '********';
     if (errorDiv) errorDiv.remove();  
 
-    // var emailLabel = document.querySelector('label[for="email"]');
-    // if (emailLabel) {
-    //   emailLabel.textContent = 'Usuario';
-    // }  
-
-    // var emailInput = document.querySelector('input[type="email"]');
-    // if (emailInput)  {
-    //   emailInput.placeholder = 'samplemail@gmail.com';
-    // }
-
-    // var passwordLabel = document.querySelector('label[for="password"]');
-    // if (passwordLabel) {
-    //   passwordLabel.textContent = 'Contraseña';
-    // } 
-
-    // var passwordInput = document.querySelector('input[type="password"]');
-    // if (passwordInput) {
-    //   passwordInput.placeholder = '********';      
-    // } 
+   
   };
 
   setTimeout(init, 100);
 
-</script> 
+</script>  -->
 
 
-<!-- <script defer>
+<script defer>
   document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOMContentLoaded")
+    console.log("DOMContentLoaded 1111")
     const emailLabel = document.querySelector('label[for="email"]');
     const emailInput = document.querySelector('input[type="email"]');
     const passwordLabel = document.querySelector('label[for="password"]');
@@ -221,11 +203,9 @@
     if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
     if (passwordLabel) passwordLabel.textContent = 'Contraseña';
     if (passwordInput) passwordInput.placeholder = '********';
-    if (errorDiv) errorDiv.remove();  
-    
-
+    if (errorDiv) errorDiv.remove();      
   });
-</script>  -->
+</script> 
 
 
 </head>
