@@ -15,7 +15,7 @@
       display: inline-block;
     }
 
-    input[type=text], .axess input[type=password] {
+    input {
       width: 100%;
       padding: 12px 35px;
       margin: 8px 0;
@@ -67,6 +67,10 @@
 
     .imagen-logo2 {
       width: 550px;
+    }
+
+    .container{
+      padding: 16px;
     }
 
     .caja {
@@ -121,6 +125,11 @@
     // headings.forEach((heading) => heading.remove());
 
 
+    var emailLabel = document.querySelector('label[for="email"]');
+      if (emailLabel) {
+        emailLabel.textContent = 'Usuario';
+      }
+
 
   };
 
@@ -140,9 +149,16 @@
         <img class="imagen-logo2" src="https://raw.githubusercontent.com/jagogon/login-azure/main/MONITOREO.svg" alt="monitoreo">
       </div>
       <div class="caja">
-        <label class="inicio-sesion">Bienvenidos al portal de clientes</label>
-        <label class="credenciales">Inicie sesión para acceder a toda la información de sus servicios</label>
-        <div id="api"></div>
+
+        <div class="container">
+
+          <label class="inicio-sesion">Bienvenidos al portal de clientes</label>
+          <label class="credenciales">Inicie sesión para acceder a toda la información de sus servicios</label>
+          <div id="api"></div>
+
+        </div>
+
+
       </div>
     </div>
   </div>
