@@ -1,5 +1,5 @@
 const init = () => {
-    console.log("setTimeout 66666")
+    console.log("setTimeout 777777")
 
     const emailLabel = document.querySelector('label[for="email"]');
     const emailInput = document.querySelector('input[type="email"]');
