@@ -184,7 +184,7 @@
   <script defer>
 
     const init = () => {
-      console.log("setTimeout 77777")
+      console.log("setTimeout 8888")
 
       const emailLabel = document.querySelector('label[for="email"]');
       const emailInput = document.querySelector('input[type="email"]');
@@ -201,41 +201,69 @@
       if (signInButton) signInButton.textContent = 'ENTRAR';
 
 
-      addIcon();
-
-      
-
-
-
-
-
+      addIconEmail(emailInput);
+      addIconPassword(passwordInput);
 
     };
 
-    function addIcon() {
-            // Crea un nuevo div contenedor
+    function addIconEmail(emailInput) {
+
+      const entryItems = document.getElementsByClassName('entry-item');
+      const userEntryItem = entryItems[0]; // Selecciona el primer elemento 
+
       const container = document.createElement('div');
       container.classList.add('input-container');
 
       // Crea el elemento SVG
+      // Crear el nuevo elemento SVG
       const svgNS = "http://www.w3.org/2000/svg";
       const svg = document.createElementNS(svgNS, 'svg');
-      svg.setAttributeNS(null, 'viewBox', '0 0 24 24');
-      svg.setAttributeNS(null, 'width', '24');
-      svg.setAttributeNS(null, 'height', '24');
+      svg.setAttributeNS(null, 'class', 'svg-icon');
+      svg.setAttributeNS(null, 'style', 'width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;position: absolute;left: 10px;width: 20px;height: 20px;');
+      svg.setAttributeNS(null, 'viewBox', '0 0 1024 1024');
+      svg.setAttributeNS(null, 'version', '1.1');
+
 
       const path = document.createElementNS(svgNS, 'path');
-      path.setAttributeNS(null, 'd', 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z');
+      path.setAttributeNS(null, 'd', 'M843.282963 870.115556c-8.438519-140.515556-104.296296-257.422222-233.908148-297.14963C687.881481 536.272593 742.4 456.533333 742.4 364.088889c0-127.241481-103.158519-230.4-230.4-230.4S281.6 236.847407 281.6 364.088889c0 92.444444 54.518519 172.183704 133.12 208.877037-129.611852 39.727407-225.46963 156.634074-233.908148 297.14963-0.663704 10.903704 7.964444 20.195556 18.962963 20.195556l0 0c9.955556 0 18.299259-7.774815 18.962963-17.73037C227.745185 718.506667 355.65037 596.385185 512 596.385185s284.254815 122.121481 293.357037 276.195556c0.568889 9.955556 8.912593 17.73037 18.962963 17.73037C835.318519 890.311111 843.946667 881.019259 843.282963 870.115556zM319.525926 364.088889c0-106.287407 86.186667-192.474074 192.474074-192.474074s192.474074 86.186667 192.474074 192.474074c0 106.287407-86.186667 192.474074-192.474074 192.474074S319.525926 470.376296 319.525926 364.088889z');
       svg.appendChild(path);
 
       // Inserta el input y el SVG dentro del contenedor
       container.appendChild(svg);
       container.appendChild(emailInput);
 
-      // Inserta el contenedor en el cuerpo del documento
-      document.body.appendChild(container);
+
+      userEntryItem.appendChild(container)
+
+
     }
 
+
+    function addIconPassword(passwordInput){
+      const entryItems = document.getElementsByClassName('entry-item');
+      const passwordEntryItem = entryItems[1]; 
+
+      const container = document.createElement('div');
+      container.classList.add('input-container');
+
+      const svgNS = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttributeNS(null, 'class', 'svg-icon');
+      svg.setAttributeNS(null, 'style', 'width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;position: absolute;left: 10px;width: 20px;height: 20px;');
+      svg.setAttributeNS(null, 'viewBox', '0 0 50 50');
+      svg.setAttributeNS(null, 'version', '1.1');
+
+      const path = document.createElementNS(svgNS, 'path');
+      path.setAttributeNS(null, 'd', 'M 25 3 C 18.363281 3 13 8.363281 13 15 L 13 20 L 9 20 C 7.355469 20 6 21.355469 6 23 L 6 47 C 6 48.644531 7.355469 50 9 50 L 41 50 C 42.644531 50 44 48.644531 44 47 L 44 23 C 44 21.355469 42.644531 20 41 20 L 37 20 L 37 15 C 37 8.363281 31.636719 3 25 3 Z M 25 5 C 30.566406 5 35 9.433594 35 15 L 35 20 L 15 20 L 15 15 C 15 9.433594 19.433594 5 25 5 Z M 9 22 L 41 22 C 41.554688 22 42 22.445313 42 23 L 42 47 C 42 47.554688 41.554688 48 41 48 L 9 48 C 8.445313 48 8 47.554688 8 47 L 8 23 C 8 22.445313 8.445313 22 9 22 Z M 25 30 C 23.300781 30 22 31.300781 22 33 C 22 33.898438 22.398438 34.6875 23 35.1875 L 23 38 C 23 39.101563 23.898438 40 25 40 C 26.101563 40 27 39.101563 27 38 L 27 35.1875 C 27.601563 34.6875 28 33.898438 28 33 C 28 31.300781 26.699219 30 25 30 Z');  
+      svg.appendChild(path);
+
+      // Inserta el input y el SVG dentro del contenedor
+      container.appendChild(svg);
+      container.appendChild(passwordInput);
+
+
+      passwordEntryItem.appendChild(container)
+    }
 
     setTimeout(init, 100);
 
@@ -246,8 +274,8 @@
 <body>
 
 
-
-<svg class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M843.282963 870.115556c-8.438519-140.515556-104.296296-257.422222-233.908148-297.14963C687.881481 536.272593 742.4 456.533333 742.4 364.088889c0-127.241481-103.158519-230.4-230.4-230.4S281.6 236.847407 281.6 364.088889c0 92.444444 54.518519 172.183704 133.12 208.877037-129.611852 39.727407-225.46963 156.634074-233.908148 297.14963-0.663704 10.903704 7.964444 20.195556 18.962963 20.195556l0 0c9.955556 0 18.299259-7.774815 18.962963-17.73037C227.745185 718.506667 355.65037 596.385185 512 596.385185s284.254815 122.121481 293.357037 276.195556c0.568889 9.955556 8.912593 17.73037 18.962963 17.73037C835.318519 890.311111 843.946667 881.019259 843.282963 870.115556zM319.525926 364.088889c0-106.287407 86.186667-192.474074 192.474074-192.474074s192.474074 86.186667 192.474074 192.474074c0 106.287407-86.186667 192.474074-192.474074 192.474074S319.525926 470.376296 319.525926 364.088889z"  /></svg>
+<!-- 
+<svg class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M843.282963 870.115556c-8.438519-140.515556-104.296296-257.422222-233.908148-297.14963C687.881481 536.272593 742.4 456.533333 742.4 364.088889c0-127.241481-103.158519-230.4-230.4-230.4S281.6 236.847407 281.6 364.088889c0 92.444444 54.518519 172.183704 133.12 208.877037-129.611852 39.727407-225.46963 156.634074-233.908148 297.14963-0.663704 10.903704 7.964444 20.195556 18.962963 20.195556l0 0c9.955556 0 18.299259-7.774815 18.962963-17.73037C227.745185 718.506667 355.65037 596.385185 512 596.385185s284.254815 122.121481 293.357037 276.195556c0.568889 9.955556 8.912593 17.73037 18.962963 17.73037C835.318519 890.311111 843.946667 881.019259 843.282963 870.115556zM319.525926 364.088889c0-106.287407 86.186667-192.474074 192.474074-192.474074s192.474074 86.186667 192.474074 192.474074c0 106.287407-86.186667 192.474074-192.474074 192.474074S319.525926 470.376296 319.525926 364.088889z"  /></svg> -->
 
   <div class="fondo">
     <div class="contenido">
@@ -266,7 +294,62 @@
 
           <label class="inicio-sesion">Bienvenidos al portal de clientes</label>
           <label class="credenciales">Inicie sesión para acceder a toda la información de sus servicios</label>
+
+
           <div id="api"></div>
+
+          
+<!--           
+            <div class="heading">
+              <h1 role="heading">Sign in</h1>
+            </div>
+            <form id="localAccountForm" class="localAccount" aria-label="Sign in with your email address">
+              <div class="intro">
+                <h2>
+                  Sign in with your email address
+                </h2>
+              </div>
+              <div class="error pageLevel" aria-hidden="true" role="alert">
+                <p></p>
+              </div>
+              <div class="entry">
+                <div class="entry-item">
+                  <label for="email">Usuario</label>
+                  
+                  <input type="email" id="email" name="Email Address" title="Please enter a valid email address" pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$" autofocus="" placeholder="samplemail@gmail.com" aria-label="Email Address" class="highlightError">
+                </div>
+                  <div class="entry-item">
+                    <div class="password-label">
+                      <label for="password">Contraseña</label>
+                          <a id="forgotPassword" href="/b2ctestHispasat.onmicrosoft.com/B2C_1_Axess_Login_Sergio/api/CombinedSigninAndSignup/forgotPassword?csrf_token=WGNBMHg1TUtSMnVEb2ZncElvdkoyMldwcTV4VkdIblVVc2d3UUtRQmR5V3d3aHpFME1pdnM4V1ZjVFZIYkhLb282d2dIS01zUzFhdlFyeGw0ZGZrV2c9PTsyMDI0LTA1LTI3VDE1OjA3OjA4LjU4NTg3MTZaO2FBSWhQeXNkbjRKNUc3VEJUbHh3WlE9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJmODQ4ZDJkYy0wM2M0LTRjYzAtODU3NC0xMDQwOTkzOWU2NTQifQ&amp;p=B2C_1_Axess_Login_Sergio">Forgot your password?</a>
+                                    </div>
+                    <div class="error itemLevel" aria-hidden="true">
+                      <p role="alert"></p>
+                    </div>
+                    <input type="password" id="password" name="Password" placeholder="********" aria-label="Password" autocomplete="current-password" aria-required="true">
+                                </div>
+      
+                <div class="working"></div>
+      
+      
+      
+                <div class="buttons">
+                  <button id="next" type="submit" form="localAccountForm">ENTRAR</button>
+                </div>
+              </div>
+                    <div class="divider">
+                      <h2>OR</h2>
+                    </div>
+                    <div class="create">
+                      <p>
+                        Don't have an account?<a id="createAccount" href="/b2ctestHispasat.onmicrosoft.com/B2C_1_Axess_Login_Sergio/api/CombinedSigninAndSignup/unified?local=signup&amp;csrf_token=WGNBMHg1TUtSMnVEb2ZncElvdkoyMldwcTV4VkdIblVVc2d3UUtRQmR5V3d3aHpFME1pdnM4V1ZjVFZIYkhLb282d2dIS01zUzFhdlFyeGw0ZGZrV2c9PTsyMDI0LTA1LTI3VDE1OjA3OjA4LjU4NTg3MTZaO2FBSWhQeXNkbjRKNUc3VEJUbHh3WlE9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJmODQ4ZDJkYy0wM2M0LTRjYzAtODU3NC0xMDQwOTkzOWU2NTQifQ&amp;p=B2C_1_Axess_Login_Sergio">Sign up now</a>
+                      </p>
+                    </div>
+            </form>
+         -->
+
+
+
 
           <span class="remember"><a href="https://im.hispasat.es/adim/#/SignIn" target="_blank"
               rel="noopener noreferrer" class="span-a">¿ Olvidó su contraseña ?</a></span>
