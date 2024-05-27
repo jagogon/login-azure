@@ -57,8 +57,7 @@
 
     label {
       width: 94px;
-      height: 12px;
-      margin-top: 16px;
+      height: 12px;      
       font-size: 16px;
       font-weight: normal;
       font-style: normal;
@@ -116,8 +115,7 @@
     }
 
     .caja {
-      width: 380px;
-      height: 496px;
+      width: 380px;      
       border-radius: 4px;
       background-color: #ffffff;
       color: black;
@@ -175,7 +173,7 @@
   <script defer>
 
     const init = () => {
-      console.log("setTimeout 66666")
+      // console.log("setTimeout 66666")
 
       const emailLabel = document.querySelector('label[for="email"]');
       const emailInput = document.querySelector('input[type="email"]');
@@ -189,7 +187,7 @@
       if (passwordLabel) passwordLabel.textContent = 'Contraseña';
       if (passwordInput) passwordInput.placeholder = '********';
       if (errorDiv) errorDiv.remove();
-      if (signInButton) signInButton.textContent = 'Entrar';
+      if (signInButton) signInButton.textContent = 'ENTRAR';
 
 
     };
