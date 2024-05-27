@@ -179,46 +179,9 @@
     }
   </style>
 
-
-
-</head>
-
-<body>
-
-  <div class="fondo">
-    <div class="contenido">
-      <div class="logo">
-        <img class="imagen-logo"
-          src="https://raw.githubusercontent.com/jagogon/login-azure/main/LogoBlancoFranjaAzul.png" alt="logo axess">
-      </div>
-      <div class="logo2">
-        <img class="imagen-logo2" src="https://raw.githubusercontent.com/jagogon/login-azure/main/MONITOREO.svg"
-          alt="monitoreo">
-      </div>
-      <div class="caja">
-
-
-        <div class="container">
-
-          <label class="inicio-sesion">Bienvenidos al portal de clientes</label>
-          <label class="credenciales">Inicie sesión para acceder a toda la información de sus servicios</label>
-
-
-          <div id="api"></div>
-
-          <span class="remember"><a href="https://im.hispasat.es/adim/#/SignIn" target="_blank"
-              rel="noopener noreferrer" class="span-a">¿ Olvidó su contraseña ?</a></span>
-
-        </div>
-
-
-      </div>
-    </div>
-  </div>
-</body>
-
 <script defer>
   const init = () => {
+    console.log('1111111');
     const emailInput = document.querySelector('input[type="email"]');
     const passwordInput = document.querySelector('input[type="password"]');
 
@@ -289,5 +252,37 @@
 
 
 </script>
+
+
+
+</head>
+
+<body>
+
+  <div class="fondo">
+    <div class="contenido">
+      <div class="logo">
+        <img class="imagen-logo"
+          src="https://raw.githubusercontent.com/jagogon/login-azure/main/LogoBlancoFranjaAzul.png" alt="logo axess">
+      </div>
+      <div class="logo2">
+        <img class="imagen-logo2" src="https://raw.githubusercontent.com/jagogon/login-azure/main/MONITOREO.svg"
+          alt="monitoreo">
+      </div>
+      <div class="caja">
+        <div class="container">
+          <label class="inicio-sesion">Bienvenidos al portal de clientes</label>
+          <label class="credenciales">Inicie sesión para acceder a toda la información de sus servicios</label>
+
+          <div id="api"></div>
+
+          <span class="remember"><a href="https://im.hispasat.es/adim/#/SignIn" target="_blank"
+              rel="noopener noreferrer" class="span-a">¿ Olvidó su contraseña ?</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 
 </html>
