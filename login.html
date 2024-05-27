@@ -182,7 +182,7 @@
   <script defer>
 
     const init = () => {
-        console.log("setTimeout 33333");
+        console.log("setTimeout 4444");
 
         const emailInput = document.querySelector('input[type="email"]');
         const passwordInput = document.querySelector('input[type="password"]');
@@ -212,14 +212,18 @@
         }
     };
 
-    const addIcon = (inputElement, pathData) => {
+    const addIcon = (id,inputElement, pathData) => {
         const container = document.createElement('div');
         container.classList.add('input-container');
 
         const svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
         svg.classList.add('svg-icon');
         svg.setAttribute('style', 'width: 1em;height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;position: absolute;left: 10px;width: 20px;height: 20px;');
-        svg.setAttribute('viewBox', '0 0 1024 1024');
+        if(id == 'inputElement') {
+
+        }else {
+          svg.setAttribute('viewBox', '0 0 50 50');
+        }
 
         console.log(inputElement)
         const path = document.createElementNS("http://www.w3.org/2000/svg", 'path');
@@ -238,7 +242,7 @@
 
         const pathData = 'M843.282963 870.115556c-8.438519-140.515556-104.296296-257.422222-233.908148-297.14963C687.881481 536.272593 742.4 456.533333 742.4 364.088889c0-127.241481-103.158519-230.4-230.4-230.4S281.6 236.847407 281.6 364.088889c0 92.444444 54.518519 172.183704 133.12 208.877037-129.611852 39.727407-225.46963 156.634074-233.908148 297.14963-0.663704 10.903704 7.964444 20.195556 18.962963 20.195556l0 0c9.955556 0 18.299259-7.774815 18.962963-17.73037C227.745185 718.506667 355.65037 596.385185 512 596.385185s284.254815 122.121481 293.357037 276.195556c0.568889 9.955556 8.912593 17.73037 18.962963 17.73037C835.318519 890.311111 843.946667 881.019259 843.282963 870.115556zM319.525926 364.088889c0-106.287407 86.186667-192.474074 192.474074-192.474074s192.474074 86.186667 192.474074 192.474074c0 106.287407-86.186667 192.474074-192.474074 192.474074S319.525926 470.376296 319.525926 364.088889z';
 
-        const container = addIcon(emailInput, pathData);
+        const container = addIcon('emailInput',emailInput, pathData);
         userEntryItem.appendChild(container);
     }
 
@@ -248,7 +252,7 @@
 
         const pathData = 'M 25 3 C 18.363281 3 13 8.363281 13 15 L 13 20 L 9 20 C 7.355469 20 6 21.355469 6 23 L 6 47 C 6 48.644531 7.355469 50 9 50 L 41 50 C 42.644531 50 44 48.644531 44 47 L 44 23 C 44 21.355469 42.644531 20 41 20 L 37 20 L 37 15 C 37 8.363281 31.636719 3 25 3 Z M 25 5 C 30.566406 5 35 9.433594 35 15 L 35 20 L 15 20 L 15 15 C 15 9.433594 19.433594 5 25 5 Z M 9 22 L 41 22 C 41.554688 22 42 22.445313 42 23 L 42 47 C 42 47.554688 41.554688 48 41 48 L 9 48 C 8.445313 48 8 47.554688 8 47 L 8 23 C 8 22.445313 8.445313 22 9 22 Z M 25 30 C 23.300781 30 22 31.300781 22 33 C 22 33.898438 22.398438 34.6875 23 35.1875 L 23 38 C 23 39.101563 23.898438 40 25 40 C 26.101563 40 27 39.101563 27 38 L 27 35.1875 C 27.601563 34.6875 28 33.898438 28 33 C 28 31.300781 26.699219 30 25 30 Z';
 
-        const container = addIcon(passwordInput, pathData);
+        const container = addIcon('passwordInput',passwordInput, pathData);
         passwordEntryItem.appendChild(container);
     }
 
