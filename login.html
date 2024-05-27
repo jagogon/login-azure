@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hispasat</title>
 
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/jagogon/login-azure/main/style.css">
 
-  <!-- <style>
+  <style>
     body {
       margin: 0;
       padding: 0;
@@ -16,7 +15,7 @@
     }
 
 
-    label{
+    label {
       display: inline-block;
       width: 93px;
       height: 11px;
@@ -26,7 +25,7 @@
       font-stretch: normal;
       line-height: normal;
       letter-spacing: normal;
-      color: #4e5b73;      
+      color: #4e5b73;
     }
 
     input {
@@ -56,7 +55,7 @@
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
     }
 
-    label{
+    label {
       width: 94px;
       height: 12px;
       margin-top: 16px;
@@ -99,7 +98,8 @@
     }
 
     .logo2 {
-      left: calc(50vw - 275px); /* Ajustado para centrar la imagen en relación con el ancho */
+      left: calc(50vw - 275px);
+      /* Ajustado para centrar la imagen en relación con el ancho */
       top: -111px;
     }
 
@@ -111,7 +111,7 @@
       width: 550px;
     }
 
-    .container{
+    .container {
       padding: 16px;
     }
 
@@ -124,7 +124,7 @@
       padding: 25px;
     }
 
-    .inicio-sesion{
+    .inicio-sesion {
       width: 342px;
       height: 32px;
       font-size: 28px;
@@ -138,7 +138,7 @@
 
     .credenciales {
       width: 342px;
-      height: 46px;      
+      height: 46px;
       font-family: OpenSans;
       font-size: 14px;
       font-weight: normal;
@@ -149,51 +149,54 @@
       color: #9da8ba;
     }
 
-    .buttons{
+    .buttons {
       margin: 16px 0px;
     }
 
-
-  .heading, .intro , .divider, .create , .error {
-    display: none;
-  }
-
-
-  #forgotPassword  {
-    display: none;
-  }
-
-  
-  </style> -->
+    .remember {
+      color: #00305f
+    }
 
 
-  <script defer src="https://raw.githubusercontent.com/jagogon/login-azure/main/script.js"></script>
-
-<!-- <script defer>
-
-  const init = () => {
-    console.log("setTimeout 66666")
-
-    const emailLabel = document.querySelector('label[for="email"]');
-    const emailInput = document.querySelector('input[type="email"]');
-    const passwordLabel = document.querySelector('label[for="password"]');
-    const passwordInput = document.querySelector('input[type="password"]');
-    const errorDiv = document.querySelector('.error.itemLevel'); 
-    const signInButton = document.getElementById('next');
-
-    if (emailLabel) emailLabel.textContent = 'Usuario';
-    if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
-    if (passwordLabel) passwordLabel.textContent = 'Contraseña';
-    if (passwordInput) passwordInput.placeholder = '********';
-    if (errorDiv) errorDiv.remove();  
-    if (signInButton) signInButton.textContent = 'Entrar';
+    .heading,
+    .intro,
+    .divider,
+    .create,
+    .error {
+      display: none;
+    }
 
 
-  };
+    #forgotPassword {
+      display: none;
+    }
+  </style>
 
-  setTimeout(init, 100);
+  <script defer>
 
-</script>  -->
+    const init = () => {
+      console.log("setTimeout 66666")
+
+      const emailLabel = document.querySelector('label[for="email"]');
+      const emailInput = document.querySelector('input[type="email"]');
+      const passwordLabel = document.querySelector('label[for="password"]');
+      const passwordInput = document.querySelector('input[type="password"]');
+      const errorDiv = document.querySelector('.error.itemLevel');
+      const signInButton = document.getElementById('next');
+
+      if (emailLabel) emailLabel.textContent = 'Usuario';
+      if (emailInput) emailInput.placeholder = 'samplemail@gmail.com';
+      if (passwordLabel) passwordLabel.textContent = 'Contraseña';
+      if (passwordInput) passwordInput.placeholder = '********';
+      if (errorDiv) errorDiv.remove();
+      if (signInButton) signInButton.textContent = 'Entrar';
+
+
+    };
+
+    setTimeout(init, 100);
+
+  </script>
 
 </head>
 
@@ -201,10 +204,12 @@
   <div class="fondo">
     <div class="contenido">
       <div class="logo">
-        <img class="imagen-logo" src="https://raw.githubusercontent.com/jagogon/login-azure/main/LogoBlancoFranjaAzul.png" alt="logo axess">
+        <img class="imagen-logo"
+          src="https://raw.githubusercontent.com/jagogon/login-azure/main/LogoBlancoFranjaAzul.png" alt="logo axess">
       </div>
       <div class="logo2">
-        <img class="imagen-logo2" src="https://raw.githubusercontent.com/jagogon/login-azure/main/MONITOREO.svg" alt="monitoreo">
+        <img class="imagen-logo2" src="https://raw.githubusercontent.com/jagogon/login-azure/main/MONITOREO.svg"
+          alt="monitoreo">
       </div>
       <div class="caja">
 
@@ -215,7 +220,8 @@
           <label class="credenciales">Inicie sesión para acceder a toda la información de sus servicios</label>
           <div id="api"></div>
 
-          <span style="color: #00305f"><a href="https://im.hispasat.es/adim/#/SignIn" target="_blank" rel="noopener noreferrer" class="span-a">¿ Olvidó su contraseña ?</a></span>
+          <span class="remember"><a href="https://im.hispasat.es/adim/#/SignIn" target="_blank"
+              rel="noopener noreferrer" class="span-a">¿ Olvidó su contraseña ?</a></span>
 
         </div>
 
