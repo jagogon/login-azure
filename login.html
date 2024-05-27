@@ -213,23 +213,28 @@
     };
 
     const addIconInput = (inputElement, pathData) => {
-        if (inputElement) {
-            const container = document.createElement('div');
-            container.classList.add('input-container');
+    if (inputElement) {
+        const container = document.createElement('div');
+        container.classList.add('input-container');
 
-            const svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-            svg.classList.add('svg-icon');
-            svg.setAttribute('viewBox', '0 0 50 50');
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+        svg.classList.add('svg-icon');
+        svg.setAttribute('viewBox', '0 0 50 50');
 
-            const path = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-            path.setAttribute('d', pathData);
+        const path = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+        path.setAttribute('d', pathData);
 
-            svg.appendChild(path);
-            container.appendChild(svg);
-            container.appendChild(inputElement);
-            inputElement.parentElement.appendChild(container);
-        }
-    };
+        svg.appendChild(path);
+        container.appendChild(svg);
+
+        // Clonar el inputElement antes de agregarlo al contenedor
+        const clonedInputElement = inputElement.cloneNode(true);
+        container.appendChild(clonedInputElement);
+
+        // Reemplazar el inputElement original con el clon en su contenedor original
+        inputElement.parentNode.replaceChild(container, inputElement);
+    }
+};
 
     // const init = () => {
     //   console.log("setTimeout 8888")
