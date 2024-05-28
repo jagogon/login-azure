@@ -192,6 +192,8 @@
       addIconEmail(emailInput);
       addIconPassword(passwordInput);
 
+      changeButtonText();
+
     };
 
     const setLabelText = (inputType, labelText) => {
@@ -246,6 +248,13 @@
       passwordEntryItem.appendChild(container);
     }
 
+    const changeButtonText = () => {
+      const submitButton = document.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.textContent = 'ENTRAR';
+      }
+    };
+    
     setTimeout(init, 100);
 
 
